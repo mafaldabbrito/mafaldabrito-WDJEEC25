@@ -60,7 +60,7 @@
 
 body {
   min-height: 100vh;
-  color:#efeeee;
+  color:#ffffff;
   background: var(--color-background);
   transition:
     color 0.5s,
@@ -70,7 +70,6 @@ body {
     Inter,
     -apple-system,
     BlinkMacSystemFont,
-    'Lexend Deca',
     Roboto,
     'Consolas',
     'Segoe UI',

@@ -14,13 +14,13 @@
                 <VueDatePicker v-if=slide.input class="date" v-model="date" model-type="dd.MM.yyyy" auto-apply placeholder="Select Date" />
                 <div class="texto">
                     <div class="title">
-                        <h1 v-if=slide.flex>Intergration of wind farms into Eletricity Grids</h1>
+                        <h1 v-if=slide.flex>Intergration of wind farms into Eletricity Grids</h1>  
+                    </div>
+                    <div class="sub-title">
                         <h2 v-if=slide.flex>Workshop</h2>
                         <h3 v-if=slide.flex >By Vestas</h3>
                     </div>
-                
                     <p v-if=slide.flex> This workshop will cover the representation of wind solution in simulation software, with an emphasis on wind turbine design and eletrical performance for compliance with grid requirements.</p>
-        
                 </div>
                 
             </div>
@@ -84,7 +84,7 @@ export default {
   data () {
     return{
         slides:[
-        {id: '1', title: 'Question', content: 'Qual a melhor frase do film do shrek?', img: false, text: true, input: false, flex:false},
+        {id: '1', title: 'Question', content: 'Qual é o melhor dia do ano?', img: false, text: true, input: false, flex:false},
         {id: '2', title: 'Date', content: date, img: false, text: false, input: true, flex:false},
         {id: '3', title: 'flexbox', content: 'Rendering Conditionally', img: false, text: false, input: false, flex:true},
         {id: '4', title: 'img', content: challenge, img: true, text: false, input: false, flex:false},
@@ -112,7 +112,6 @@ export default {
 .carousel {
     min-width: 93vw;
     max-height: 900px;
-  
 }
 
 .carousel__track {
@@ -122,17 +121,20 @@ export default {
 .carousel__item {
     height: 400px;
     max-width: 900px;
-    border-radius: 8px;
-    font-size: 40px;
     background-color: var(--vt-c-black-soft);
+    border-radius: 20px;
+    border: 4px solid #4cc9f0;
+    overflow: hidden;
+    box-shadow: 0 0 10px #4cc9f0;
 }
 .Question{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    font-family: "Lexend Deca", sans-serif;
+    align-items: flex-start;
+    justify-items: flex-start;
     padding: 100px;
+    font-size: 50px;
+    font-weight: bold;
 }
 .date{
     display: flex;
@@ -140,7 +142,7 @@ export default {
     align-items: center;
     justify-items: center;
     padding: 20px;
-    margin-top:-20px;
+  
 }
 
 
@@ -152,16 +154,21 @@ export default {
     align-items: flex-start;
     /* Option A for vertical centering */
     justify-items: flex-start;
-    font-family: "Lexend Deca", sans-serif; 
-    font-stretch: expanded;
-    font-size:25px; 
+    margin-top: -8px;
+    font-size:19px; 
     text-align: left;
-    padding: 20px;
+    padding: 40px;
   
 } 
 
 .title{
     font-weight:bold;
+    font-size: 25px;
+}
+
+.subtitle{
+    padding: 20px;
+    text-shadow: 0px 0px 10px #4cc9f0, 2.5px 2.5px 0 #4cc9f0, 2.5px -2.5px 0 #4cc9f0, -2.5px 2.5px 0 #4cc9f0, -2.5px -2.5px 0 #4cc9f0;
 }
 
 
