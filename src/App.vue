@@ -3,20 +3,23 @@
 
 <div class="container">
     <header>
-        <img alt="JEEC logo" class="logo" src="./assets/jeec-logo.svg" height="60px" />
+        <img alt="JEEC logo" class="logo" src="./assets/jeec-logo.svg" height="80px" />
     </header>
 
     <Carousel :items-to-show="1.5" :wrap-around="true">
         <Slide v-for="slide in slides" :key="slide">
             <div class="carousel__item">
                 <p v-if=slide.text class="Question">{{slide.content}}</p>
-                <img v-if=slide.img alt="Web dev logo" class="webdev_logo" v-bind:src=slide.content width="100%">
+                <img v-if=slide.img alt="Web dev logo" class="webdev_logo" v-bind:src=slide.content>
                 <VueDatePicker v-if=slide.input class="date" v-model="date" model-type="dd.MM.yyyy" auto-apply placeholder="Select Date" />
                 <div class="texto">
-                    <h1 v-if=slide.flex>Intergration of wind farms into Eletricity </h1>
-                    <h1 v-if=slide.flex>Grids</h1>
-                    <h2 v-if=slide.flex>Workshop</h2>
-                    <h3 v-if=slide.flex>By Vestas</h3>
+                    <div class="title">
+                        <h1 v-if=slide.flex>Intergration of wind farms into Eletricity </h1>
+                        <h1 v-if=slide.flex>Grids</h1>
+                        <h2 v-if=slide.flex>Workshop</h2>
+                        <h3 v-if=slide.flex >By Vestas</h3>
+                    </div>
+                
                     <p v-if=slide.flex> This workshop will cover the representation of wind solution in simulation software, with an emphasis on wind turbine design and eletrical performance for compliance with grid requirements.</p>
                     <p v-if=slide.flex>  </p> 
                     <p v-if=slide.flex>  </p>
@@ -111,8 +114,8 @@ export default {
 
 .carousel {
     min-width: 93vw;
-    max-height: 1000px;
-    
+    max-height: 900px;
+  
 }
 
 .carousel__track {
@@ -120,9 +123,8 @@ export default {
 }
 
 .carousel__item {
-    margin-block: 10px;
-    max-height: 500px;
-    max-width: 800px;
+    height: 400px;
+    max-width: 900px;
     border-radius: 8px;
     font-size: 40px;
     background-color: var(--vt-c-black-soft);
@@ -135,8 +137,15 @@ export default {
     padding: 100px;
 }
 .date{
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    padding: 20px;
+    margin-top:-20px;
 }
+
+
 
 .texto{
     display: flex;
@@ -145,24 +154,24 @@ export default {
     align-items: flex-start;
     /* Option A for vertical centering */
     justify-items: flex-start;
-    font-size:27px;
+    font-size:21px; 
     text-align: left;
     padding: 20px;
-}
+    margin-top: -10px;
+}   
+
 
 .webdev_logo {
     display: flex;
     justify-items: center;
-    width: 800px;
-    padding: 20px;
-    align-items: center;
-    background-color: var(--vt-c-black);
-    
+    align-items: flex-start;
+    max-width: 700px;
+    height:400px;
 }
 
 
 .carousel__slide {
-    padding: 4px;
+    padding: 20px;
 }
 
 .carousel__prev,
