@@ -6,7 +6,7 @@
         <img alt="JEEC logo" class="logo" src="./assets/jeec-logo.svg" height="80px" />
     </header>
 
-    <Carousel :items-to-show="1.5" :wrap-around="true">
+    <Carousel :items-to-show="1.5" :wrap-around="true" :mouseDrag="true">
         <Slide v-for="slide in slides" :key="slide">
             <div class="carousel__item">
                 <p v-if=slide.text class="Question">{{slide.content}}</p>
@@ -14,16 +14,13 @@
                 <VueDatePicker v-if=slide.input class="date" v-model="date" model-type="dd.MM.yyyy" auto-apply placeholder="Select Date" />
                 <div class="texto">
                     <div class="title">
-                        <h1 v-if=slide.flex>Intergration of wind farms into Eletricity </h1>
-                        <h1 v-if=slide.flex>Grids</h1>
+                        <h1 v-if=slide.flex>Intergration of wind farms into Eletricity Grids</h1>
                         <h2 v-if=slide.flex>Workshop</h2>
                         <h3 v-if=slide.flex >By Vestas</h3>
                     </div>
                 
                     <p v-if=slide.flex> This workshop will cover the representation of wind solution in simulation software, with an emphasis on wind turbine design and eletrical performance for compliance with grid requirements.</p>
-                    <p v-if=slide.flex>  </p> 
-                    <p v-if=slide.flex>  </p>
-                    <p v-if=slide.flex></p>
+        
                 </div>
                 
             </div>
@@ -37,7 +34,7 @@
     </Carousel>
     <div class="answers">
         <h3>A resposta é não faço puto ideia!</h3>
-        <h3>{{date}}</h3>
+        <h3>Data Selecionada: {{date}}</h3>
     </div>
     
     
@@ -134,12 +131,13 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-items: center;
+    font-family: "Lexend Deca", sans-serif;
     padding: 100px;
 }
 .date{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-items: center;
     padding: 20px;
     margin-top:-20px;
@@ -154,11 +152,17 @@ export default {
     align-items: flex-start;
     /* Option A for vertical centering */
     justify-items: flex-start;
-    font-size:21px; 
+    font-family: "Lexend Deca", sans-serif; 
+    font-stretch: expanded;
+    font-size:25px; 
     text-align: left;
     padding: 20px;
-    margin-top: -10px;
-}   
+  
+} 
+
+.title{
+    font-weight:bold;
+}
 
 
 .webdev_logo {
@@ -179,5 +183,8 @@ export default {
     color: #000;
     box-sizing: border-box;
     border: 4px solid white;
+}
+.answers{
+    padding: 20px;
 }
 </style>

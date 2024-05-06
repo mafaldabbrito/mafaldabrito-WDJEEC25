@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@vuepic/vue-datepicker": "^8.5.1",
+    "aos": "^2.3.4",
     "vue": "^3.4.21",
+    "vue-scroll-reveal": "^2.1.0",
     "vue3-carousel": "^0.3.3",
     "vuejs3-datepicker": "^1.1.2"
   },

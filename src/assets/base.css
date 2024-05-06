@@ -55,12 +55,12 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  /*font-weight: normal;*/
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  color:#efeeee;
   background: var(--color-background);
   transition:
     color 0.5s,
@@ -70,6 +70,7 @@ body {
     Inter,
     -apple-system,
     BlinkMacSystemFont,
+    'Lexend Deca',
     Roboto,
     'Consolas',
     'Segoe UI',
