@@ -111,7 +111,7 @@ export default {
     align-items: center;
     /* Option A for vertical centering */
     justify-content: center;
-    max-width: 95vw;
+    max-width: 87vw;
     min-height: 80vh;
 
 }
@@ -142,6 +142,7 @@ export default {
     padding: 100px;
     font-size: 50px;
     font-weight: bold;
+    text-shadow: 0px 0px 10px #79e0ff;
 }
 .date{
     display: flex;
