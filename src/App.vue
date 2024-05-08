@@ -6,11 +6,12 @@
         <img alt="JEEC logo" class="logo" src="./assets/jeec-logo.svg" height="80px" />
     </header>
 
-    <Carousel :items-to-show="1.5" :wrap-around="true" :mouseDrag="true">
+    <Carousel :items-to-show="1.5" :wrap-around="true" :mouseDrag="true" ref="myCarousel">
         <Slide v-for="slide in slides" :key="slide">
             <div class="carousel__item">
                 <p v-if=slide.text class="Question">{{slide.content}}</p>
                 <img v-if=slide.img alt="Web dev logo" class="webdev_logo" v-bind:src=slide.content>
+                <img v-if=slide.shrek alt="Shrek" class="shrek" v-bind:src=slide.content>
                 <VueDatePicker v-if=slide.input class="date" v-model="date" model-type="dd.MM.yyyy" auto-apply placeholder="Select Date" />
                 <div class="texto">
                     <div class="title">
@@ -33,7 +34,7 @@
 
     </Carousel>
     <div class="answers">
-        <h3>A resposta é não faço puto ideia!</h3>
+        <h3>Oh f*da-se !</h3>
         <h3>Data Selecionada: {{date}}</h3>
     </div>
     
@@ -45,6 +46,7 @@
 
 <script>
 import challenge from "./assets/challenge.png"
+import shrek from "./assets/shrekdeitado.jpg"
 import Background from "./assets/jeec-2.jpg"
 import {
     Carousel,
@@ -55,9 +57,7 @@ import {
 import 'vue3-carousel/dist/carousel.css'
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
-import {
-    ref
-} from 'vue';
+import { ref } from 'vue';
 
 const date = ref();
 
@@ -76,19 +76,26 @@ export default {
   },
   setup() {
     const date = ref();
-
+    const myCarousel= ref(null);
     return {
-      date
-    }
+      date,
+      myCarousel,
+    };
+
+   
     },
   data () {
     return{
         slides:[
-        {id: '1', title: 'Question', content: 'Qual é o melhor dia do ano?', img: false, text: true, input: false, flex:false},
-        {id: '2', title: 'Date', content: date, img: false, text: false, input: true, flex:false},
-        {id: '3', title: 'flexbox', content: 'Rendering Conditionally', img: false, text: false, input: false, flex:true},
-        {id: '4', title: 'img', content: challenge, img: true, text: false, input: false, flex:false},
-        ]
+        {id: '1', title: 'Question', content: 'Qual a melhor quote do Shrek? ', img: false, text: true, input: false, flex:false, shrek:false},
+        {id: '2', title: 'Date', content: date, img: false, text: false, input: true, flex:false, shrek:false},
+        {id: '3', title: 'flexbox', content: 'Rendering Conditionally', img: false, text: false, input: false, flex:true, shrek:false},
+        {id: '4', title: 'img', content: challenge, img: true, text: false, input: false, flex:false, shrek:false},
+        {id: '5', title: 'shrek', content: shrek, img: false, text: false, input: false, flex:false, shrek:true},
+        ],
+        
+        
+        
     }
   }
 }
@@ -172,6 +179,13 @@ export default {
 }
 
 
+.shrek {
+    display: flex;
+    justify-items: center;
+    align-items: centers;
+    height:400px;
+    width:700px;  
+}
 .webdev_logo {
     display: flex;
     justify-items: center;
